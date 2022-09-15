@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres
+    container_name: nlw_esports
+    restart: always
+    ports: 
+      - 5423:5432
+    environment:
+      - POSTGRES_USER=vitor
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=db_nlw_esports
+    volumes:
+      - pgdata:/data/postgres
+
+volumes:
+  pgdata:
+    driver: local
